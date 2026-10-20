@@ -39,13 +39,14 @@ public class Giocatore implements Runnable{
     /**
      * gioca, metodo che implementa la logica del gioco e calcola il punteggio
      */
-    public void gioca(){
+    public void gioca() {
+        Long tempoInizio = System.currentTimeMillis();
         int numero = 19;
         String parola = "Divertiti";
         setParola(parola);
 
 
-        for (int i=0; i<numero; i++){
+        for (int i = 0; i < numero; i++) {
             System.out.println("Giocatore : " + nome + " i: " + i);
             try {
                 Thread.currentThread().sleep(3000);
@@ -59,9 +60,12 @@ public class Giocatore implements Runnable{
 
         setPunteggio(100);
 
-        System.out.println("Giocatore : " + nome + " parola: " + getParola() + " punteggio: " + punteggio);
-    }
 
+        System.out.println("Giocatore : " + nome + " parola: " + getParola() + " punteggio: " + punteggio);
+
+        Long tempoFine = System.currentTimeMillis();
+        System.out.println("Giocatore : " + nome + " tempo : " + (tempoFine - tempoInizio) / 1000);
+    }
     public void comunica(){
     }
 
