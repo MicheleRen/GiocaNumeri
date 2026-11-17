@@ -3,6 +3,9 @@
  */
 
 
+import src.Cifratura;
+
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,6 +47,12 @@ public class Giocatore implements Runnable{
         int numero = 19;
         String parola = "Divertiti";
         setParola(parola);
+//Cifrare il testo
+        Cifratura cifratura = new Cifratura();
+        cifratura.cifra(parola);
+        System.out.println("La parola cifrata è :");
+        //Scrivere il testo cifrato in un file
+File f = new File("<id giocatore> - gioco del <data corrente>.txt");
 
 
         for (int i = 0; i < numero; i++) {
